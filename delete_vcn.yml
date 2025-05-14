@@ -1,0 +1,11 @@
+--- 
+- name: Delete a VCN 
+  hosts: localhost 
+  gather_facts: false
+  tasks: 
+   - name: Delete the existing simple VCN 
+     oracle.oci.oci_network_vcn: 
+       vcn_id: "ocid1.vcn.oc1.iad.amaaaaaa3ow6m3yajcndvdtf6y4m774u2gu5xywacwft2g6gzovmmo2lpz6a"
+       state: absent
+     register: result 
+   - debug: msg="{{ result }}"

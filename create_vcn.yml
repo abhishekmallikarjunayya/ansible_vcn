@@ -1,0 +1,13 @@
+--- 
+- name: Create a VCN 
+  hosts: localhost 
+  gather_facts: false
+  tasks: 
+   - name: Creating a simple VCN 
+     oracle.oci.oci_network_vcn: 
+       cidr_block: '10.0.0.0/16' 
+       compartment_id: "ocid1.compartment.oc1..aaaaaaaahk3npsutiztkax2txwwek3pj4wdtyeqvipidctj3onr4ihpxisjq"
+       display_name: playbookvcn1 
+       dns_label: playbookvcn1 
+     register: result 
+   - debug: msg="{{ result }}"
