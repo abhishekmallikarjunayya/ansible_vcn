@@ -1,0 +1,11 @@
+---
+- name: delete a block volume play
+  hosts: localhost
+  gather_facts: false
+  tasks:
+  - name: delete a block volume
+    oracle.oci.oci_blockstorage_volume:
+      volume_id: "ocid1.volume.oc1.iad.abuwcljshevu75wwac53meja6jfvc2oopiqqwyypkxjnfkjza73ul3l44rcq"
+      state: absent
+    register: result
+  - debug: msg="{{ result }}"

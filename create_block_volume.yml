@@ -1,0 +1,11 @@
+---
+- name: create a block volume play
+  hosts: localhost
+  gather_facts: false
+  tasks:
+  - name: create block volume of 50 gb size
+    oracle.oci.oci_blockstorage_volume:
+      compartment_id: "ocid1.compartment.oc1..aaaaaaaahk3npsutiztkax2txwwek3pj4wdtyeqvipidctj3onr4ihpxisjq"
+      display_name: volume_by_Ansible
+      size_in_gbs: 50
+      availability_domain: "XxYz:US-ASHBURN-AD-1"
